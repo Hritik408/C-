@@ -23,6 +23,10 @@ int main(){
     person p;
     p.input("hritik",22,'M');
     p.print();
+
+    person *ptr = &p;
+    ptr->print();
+    cout << (ptr->name) << endl;
     return 0;
 }
 
