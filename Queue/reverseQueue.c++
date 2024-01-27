@@ -1,6 +1,6 @@
 #include <iostream>
 #include <queue>
-#include <stack>
+#include <stack>   
 
    void reverse(std::queue<int>& q){
      std::stack<int> s;
