@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unordered_map>
+
 // cal dist elem in every window of size = k;
 
 int main(){
