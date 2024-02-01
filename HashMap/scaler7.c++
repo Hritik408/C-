@@ -1,10 +1,14 @@
 #include <iostream>
 #include <unordered_map>
-// longest subarry with sum = 0
+// cal lon sub[] where count of 0's = 1's
 
 int main(){
-    int arr[] = {3,2,2,-1,-1,-2,3,-4,3,-1,3,-2,1,3};
+    int arr[] = {0,0,1,0,1,0,1,1,1,0,1,0,0,1,0,0};
     int n = sizeof(arr)/sizeof(arr[0]);
+
+    for(int i=0;i<n;i++){
+        if(arr[i] == 0) arr[i] = -1;
+    }
     std::unordered_map<int, std::pair<int, int>> x;
 
      x.insert({0, {-1,-1}});
@@ -12,7 +16,6 @@ int main(){
 
    for(int i=0; i<n; i++){
     prefix_sum += arr[i];
- //  x.insert({prefix_sum, {i,i}});
 
      if(x.find(prefix_sum) != x.end()){  //  if there is dublicate in prefix_sum
         x[prefix_sum].second = i; 
@@ -32,10 +35,3 @@ int main(){
 
    return 0;
 }
-
-
-
-
-
-
-

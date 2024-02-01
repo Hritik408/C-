@@ -1,5 +1,6 @@
 #include <iostream>
 #include <set>
+// find if there exist a sub[] sum = 0
 
 int main(){
     int arr[] = {3,2,2,-1,-1,-2,3,-4,3,-1,3,-2,1,3};
