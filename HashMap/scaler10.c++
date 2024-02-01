@@ -8,35 +8,35 @@ int main(){
      int n = sizeof(arr) / sizeof(arr[0]);
      int k = 4;
 
-     std::unordered_map<int,int> m;
+     std::unordered_map<int,int> x;
 
      for(int i = 0; i < k; i++){
-        if(m.find(arr[i]) != m.end()){
-            m[arr[i]]++;
+        if(x.find(arr[i]) != x.end()){
+            x[arr[i]]++;
         }
         else{
-            m[arr[i]] = 1;
+            x[arr[i]] = 1;
         }
      }
-     std::cout<< m.size() << " ";
+     std::cout<< x.size() << " ";
 
      for(int i = k; i < n; i++)
      {
-        m[arr[i-k]]--;
+        x[arr[i-k]]--;
 
-        if(m[arr[i-k]] == 0){
-            m.erase(arr[i-k]);
+        if(x[arr[i-k]] == 0){
+            x.erase(arr[i-k]);
         }
 
-        if(m.find(arr[i]) != m.end()){
-       m[arr[i]]++;
+        if(x.find(arr[i]) != x.end()){
+       x[arr[i]]++;
         }
 
         else{
-            m[arr[i]] = 1;
+            x[arr[i]] = 1;
         }
 
-        std::cout<< m.size() << " ";
+        std::cout<< x.size() << " ";
      }
 
      return 0;
