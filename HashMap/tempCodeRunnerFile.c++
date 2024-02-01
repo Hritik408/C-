@@ -1,32 +1,34 @@
-#include <iostream>
-#include <unordered_map>
+int main() {
+//     int arr[] = {2, 4, 3, 8, 3, 9, 4, 9, 4, 10};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     int k = 4;
 
-int main(){
-    int arr[] = {3,2,2,-1,-2,3,-4,3,-1,3,-2,1,3};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    std::unordered_map<int, std::pair<int, int>> x;
-    x.insert({0, {-1,-1}});
-    int prefix_sum = 0;
+//     std::unordered_map<int, int> m;
 
-   for(int i=0; i<n; i++){
-    prefix_sum += arr[i];
- //   x.insert({prefix_sum, {i,i}});
+//     for (int i = 0; i < k; i++) {
+//         if (m.find(arr[i]) != m.end()) {
+//             m[arr[i]]++;
+//         } else {
+//             m[arr[i]] = 1;
+//         }
+//     }
+//     std::cout << m.size() << " ";
 
-     if(x.find(prefix_sum) != x.end()){
-        x[prefix_sum].second++; 
-     }
-   else{
-    x.insert({prefix_sum, {i,i}});
-   }
-   }
-      
-      int max_range = 0;
-   for(auto it = x.begin(); it != x.size(); it++){
-      std::pair<int,int> y = *it;
-      int range = y.second - y.first;
-      int max_range = std::max(max_range, range);
-   }
-   std::cout << max_range << std::endl;
+//     for (int i = k; i < n; i++) {
+//         m[arr[i - k]]--;
 
-   return 0;
-}
+//         if (m[arr[i - k]] == 0) {
+//             m.erase(arr[i - k]);
+//         }
+
+//         if (m.find(arr[i]) != m.end()) {
+//             m[arr[i]]++;
+//         } else {
+//             m[arr[i]] = 1;
+//         }
+
+//         std::cout << m.size() << " ";
+//     }
+
+//     return 0;
+// }
