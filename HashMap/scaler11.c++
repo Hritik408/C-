@@ -1,0 +1,32 @@
+#include <iostream>
+#include <unordered_set>
+
+int main(){
+    int arr[] = {6,7,10,8,14,9,12,13,15,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+   
+   std::unordered_set<int> s;
+
+   for(int i = 0; i < n; i++){
+      s.insert(arr[i]);
+   }
+
+   int ans = 0;
+   for(auto it = s.begin(); it != s.end(); ++it){
+      int x = * it;
+      if(s.find(x-1) == s.end()){  // x-1 is not present
+         int temp = x + 1;
+         int count = 1;
+         while(s.find(temp) != s.end()){ // continues as long as the consecutive element temp is found in the set s.
+            count++;
+            temp++;
+         }
+         ans = std::max(ans, count);
+
+      }
+   }
+
+   std::cout<< ans ;
+
+   return 0;
+}
