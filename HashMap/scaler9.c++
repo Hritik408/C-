@@ -1,6 +1,6 @@
 #include <iostream>
 #include <set>
-// subarray sum = k 
+// subarray sum = k.
 
 int main()
 {

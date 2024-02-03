@@ -1,6 +1,6 @@
 #include <iostream>
 #include <unordered_map>
-// find no of unique elements
+// find no of unique elements.
 
 int main(){
     int arr[] = {3,4,5,3,7,4};

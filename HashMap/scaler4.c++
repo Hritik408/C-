@@ -1,7 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
-// cal no of sub[] whose sum=0
+// cal no of sub[] whose sum=0.
 
 int main()
 {

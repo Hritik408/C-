@@ -1,6 +1,6 @@
 #include <iostream>
 #include <unordered_set>
-// count no of distinct element
+// count no of distinct element.
 
 int main(){
     int arr[] = {2,3,2,5,7,5,9};

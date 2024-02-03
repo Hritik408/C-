@@ -1,6 +1,6 @@
 #include <iostream>
 #include <unordered_map>
-// find freq of given query(Q)
+// find freq of given query(Q).
 
 int main(){
     int arr[] = {9,8,1,10,1,8,6,4,2,6,9,6};
