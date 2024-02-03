@@ -29,7 +29,7 @@ int main(){
         }
 
         if(x.find(arr[i]) != x.end()){
-       x[arr[i]]++;
+        x[arr[i]]++;
         }
 
         else{
