@@ -1,6 +1,6 @@
 #include <iostream>
 #include <unordered_set> 
-// find longest sequence that can be rearranged in a strictly increasing order by 1
+// find longest sequence that can be rearranged in a strictly increasing order by 1.
 
 int main(){
     int arr[] = {6,7,10,8,14,9,12,13,15,5};
