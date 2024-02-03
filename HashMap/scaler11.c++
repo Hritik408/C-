@@ -15,7 +15,7 @@ int main(){
    int ans = 0;
    for(auto it = s.begin(); it != s.end(); ++it){
       int x = * it;
-      if(s.find(x-1) == s.end()){  // x-1 is not present
+      if(s.find(x-1) == s.end()){  // if x-1 is not present in set
          int temp = x + 1;
          int count = 1;
          while(s.find(temp) != s.end()){ // continues as long as the consecutive element temp is found in the set s.
