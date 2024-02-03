@@ -1,5 +1,5 @@
 #include <iostream>
-#include <unordered_set> // 
+#include <unordered_set> 
 
 int main(){
     int arr[] = {6,7,10,8,14,9,12,13,15,5};
