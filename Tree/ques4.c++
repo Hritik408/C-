@@ -1,5 +1,5 @@
 #include <iostream>
-// given BT, search k init
+// count all nodes which are k distance from root
 
 struct node
 {
@@ -10,6 +10,7 @@ struct node
     node(int value) : data(value), left(nullptr), right(nullptr) {}
 };
 
+
 node *insert(node *root, int value)
 {
     if (root == nullptr)
@@ -19,46 +20,38 @@ node *insert(node *root, int value)
     {
         root->left = insert(root->left, value);
     }
-    else{
+    else
+    {
         root->right = insert(root->right, value);
     }
 
     return root;
-
 }
 
-void inorder(node *root)
-{
-    if (root != nullptr)
-    {
-        inorder(root->left);
-        std::cout << root->data << " ";
-        inorder(root->right);
-    }
-}
+int count(node *root, int k){
+    if(root == nullptr) return 0;
 
-bool search(node* root, int k){
-    if(root == nullptr) return false;
+    if(k==0) return 1;
 
-    if(root->data == k) return true;
+    int lst = count(root->left, k-1);
+    int rst = count(root->right, k-1);
 
-    return search(root->left, k) || search(root->right, k);
-}
+    return lst + rst;
+} 
+
 
 int main()
 {
+
    node *root = insert(nullptr, 20);
 for (int value : {18, 15, 27, 12, 19, 10, 24, 30, 7, 1, 11, 29, 35, 5, 13, 33})
     insert(root, value);
 
-    int k = 27;
+    int k = 3;
 
-  bool ans = search(root, k);
+    int ans = count(root, k);
 
-    std::cout<< std::boolalpha << ans ;
-
-    // std::cout<< "Inorder traversal: ";
-    // inorder(root);
+   std::cout<< ans ;
 
     return 0;
 }

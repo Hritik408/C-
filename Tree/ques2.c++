@@ -61,19 +61,13 @@ bool path(node *root, std::vector<int> &p, int k)
 
 int main()
 {
-    node *root = nullptr;
-
     std::vector<int> P;
 
-    root = insert(root, 20);
-    insert(root, 18);
-    insert(root, 15);
-    insert(root, 27);
-    insert(root, 12);
-    insert(root, 19);
-    insert(root, 13);
+  node *root = insert(nullptr, 20);
+for (int value : {18, 15, 27, 12, 19, 10, 24, 30, 7, 1, 11, 29, 35, 5, 13, 33})
+    insert(root, value);
 
-    int k = 15;
+    int k = 35;
 
     bool ans = path(root, P, k);
 

@@ -53,19 +53,9 @@ bool path(node *root, std::vector<int> &p, int k)
 
 int main()
 {
-    node *root = nullptr;
-
-    root = insert(root, 20);
-    insert(root, 18);
-    insert(root, 15);
-    insert(root, 27);
-    insert(root, 12);
-    insert(root, 19);
-    insert(root, 10);
-    insert(root, 24);
-    insert(root, 30);
-    insert(root, 5);
-    insert(root, 9);
+   node *root = insert(nullptr, 20);
+for (int value : {18, 15, 27, 12, 19, 10, 24, 30, 7, 1, 11, 29, 35, 5, 13, 33})
+    insert(root, value);
 
     int m = 5;
     int n = 30;
@@ -128,8 +118,19 @@ int main()
     {
         fp.push_back(Q[k]);
     }
-
+     
+     std::cout<< m << " to " << n << " : "; 
     for (int i = 0; i < fp.size(); i++)
+    {
+        std::cout << fp[i] << " ";
+    }
+     
+    std::cout<< std::endl;
+
+    std::reverse(fp.begin(), fp.end());
+
+    std::cout<< n << " to " << m << " : ";
+     for (int i = 0; i < fp.size(); i++)
     {
         std::cout << fp[i] << " ";
     }

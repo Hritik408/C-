@@ -101,12 +101,23 @@ int main()
 {
     node *root = nullptr;
 
-    root = insert(root, 15);
-    insert(root, 13);
-    insert(root, 10);
+ root = insert(root, 20);
     insert(root, 18);
-    insert(root, 9);
-    insert(root, 17);
+    insert(root, 15);
+    insert(root, 27);
+    insert(root, 12);
+    insert(root, 19);
+    insert(root, 10);
+    insert(root, 24);
+    insert(root, 30);
+    insert(root, 7);
+    insert(root, 1);
+    insert(root, 11);
+    insert(root, 29);
+    insert(root, 35);
+    insert(root, 5);
+    insert(root, 13);
+    insert(root, 33);
 
     std::cout<< "Inorder traversals: ";
     inorder(root);
