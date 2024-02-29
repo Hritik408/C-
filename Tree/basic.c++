@@ -12,6 +12,8 @@ struct node
 
 void inorder(node *root)
 {
+    if(root == nullptr) return ;
+
     if (root != nullptr)
     {
         inorder(root->left);
@@ -21,7 +23,9 @@ void inorder(node *root)
 }
 
 void Preorder(node *root)
-{
+{    
+     if(root == nullptr)  return;
+  
     if (root != nullptr)
     {
         std::cout << root->data << " ";
@@ -32,6 +36,8 @@ void Preorder(node *root)
 
 void Postorder(node *root)
 {
+    if(root == nullptr) return ;
+
     if (root != nullptr)
     {
         Postorder(root->left);
@@ -44,12 +50,6 @@ void Postorder(node *root)
 node *insert(node *root, int value)
 {
     if (root == nullptr)    return new node(value);
-    
-    // if (value < root->data)  
-    // root->left = insert(root->left, value);
-
-    // else  
-    // root->right = insert(root->right, value);
 
       if (rand() % 2 == 0) {
         root->left = insert(root->left, value);
@@ -99,25 +99,9 @@ int findMax(node *root){
 
 int main()
 {
-    node *root = nullptr;
-
- root = insert(root, 20);
-    insert(root, 18);
-    insert(root, 15);
-    insert(root, 27);
-    insert(root, 12);
-    insert(root, 19);
-    insert(root, 10);
-    insert(root, 24);
-    insert(root, 30);
-    insert(root, 7);
-    insert(root, 1);
-    insert(root, 11);
-    insert(root, 29);
-    insert(root, 35);
-    insert(root, 5);
-    insert(root, 13);
-    insert(root, 33);
+     node *root = insert(nullptr, 20);
+for (int value : {18, 15, 27, 12, 19, 10, 24, 30, 7, 1, 11, 29, 35, 5, 13, 33})
+    insert(root, value);
 
     std::cout<< "Inorder traversals: ";
     inorder(root);
@@ -142,4 +126,3 @@ int main()
 
     return 0;
 }
-

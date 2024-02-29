@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <queue>
 #include <vector>
-// level order traversals from left to right
+// left or right view of the tree
 
 struct node
 {
@@ -37,6 +37,8 @@ node *insert(node *root, int value)
     if(root == nullptr)  return;
     
       std::queue<node *> q;
+
+      bool first_node = false;
     
     q.push(root);
     q.push(nullptr);
@@ -50,10 +52,14 @@ node *insert(node *root, int value)
         {
             if (!q.empty())   q.push(nullptr);
            std::cout << std::endl;  // come to next line
+           first_node = false;
             continue;
         }
-
+      
+      if(!first_node){
      std::cout << temp->data << " ";
+        first_node = true;
+      }
         
         
         if (temp->left != nullptr)
