@@ -15,8 +15,8 @@ bool isBST(node* root, int l, int r){
     if(root == nullptr) return true;
 
     if(l <= root->data && root->data <= r){
-        bool left = isBST(root, l, root->data + 1);
-        bool right = isBST(root, root->data - 1, r);
+        bool left = isBST(root->left, l, root->data - 1);
+        bool right = isBST(root->right, root->data + 1, r);
 
         return left && right;
     }
@@ -24,15 +24,28 @@ bool isBST(node* root, int l, int r){
 }
 
 
+node* insert(node* root, int value){
+    if(root == nullptr) return new node(value);
+
+    if(value < root->data){
+        root->left = insert(root->left, value);
+    }
+    else 
+    root->right = insert(root->right, value);
+    
+    return root;
+}
+
+
 int main(){
     node* root = insert(nullptr, 10);
 
-    for(int value : {5, 15, 3, 9, 7, 14, 9, 13, 20})
+    for(int value : {5, 15, 3, 7, 14, 9, 13, 20})
     insert(root, value);
-
+     
     bool ans = isBST(root, INT_MIN, INT_MAX);
 
     std::cout << std::boolalpha << ans;
 
-      return 0;
+    return 0;
 }

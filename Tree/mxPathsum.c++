@@ -36,9 +36,9 @@ int maxPath(node *root, int &ans)
     int l = maxPath(root->left, ans);  // max path starting form root->left
     int r = maxPath(root->right, ans); //  maximum path starting from root->right
 
-    ans = std::max(ans, root->data + std::max(l, 0) + std::max(r, 0));
+    ans = std::max(ans, root->data + std::max(l, 0) + std::max(r, 0)); // maximum path containing the root
 
-    return root->data + std::max(std::max(l, r), 0);
+    return root->data + std::max(std::max(l, r), 0); // return maximum path if i start from root
 }
 
 int main()
