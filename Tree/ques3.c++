@@ -41,6 +41,7 @@ bool path(node *root, std::vector<int> &p, int k)
         p.push_back(root->data);
         return true;
     }
+    
     if (path(root->left, p, k) || path(root->right, p, k))
     {
         p.push_back(root->data);
