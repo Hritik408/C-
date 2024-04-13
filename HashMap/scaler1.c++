@@ -9,7 +9,7 @@ int main(){
     std::unordered_map<int, int> freq;
 
     for(int i=0; i<n; i++){
-        if(freq.find(arr[i]) != freq.end()){
+        if(freq.find(arr[i]) != freq.end()){  // dublicate is present
             freq[arr[i]]++;
         }
         else{
