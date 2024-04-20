@@ -13,3 +13,5 @@ int main(){
     }
     std::cout<< x.size();
 }
+
+// 99% set is used when u want to remove dublicate element

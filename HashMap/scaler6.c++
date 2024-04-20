@@ -7,10 +7,10 @@ int main(){
     int n = sizeof(arr)/sizeof(arr[0]);
     std::unordered_map<int, std::pair<int, int>> x;
 
-     x.insert({0, {-1,-1}});
+    x.insert({0, {-1,-1}});
     int prefix_sum = 0;
 
-   for(int i=0; i<n; i++){
+    for(int i=0; i<n; i++){
     prefix_sum += arr[i];
  //  x.insert({prefix_sum, {i,i}});
 
@@ -18,7 +18,7 @@ int main(){
         x[prefix_sum].second = i; 
      }  
    else{
-    x.insert({prefix_sum, {i,i}});
+    x.insert({prefix_sum, {i,i}});   // if there is no dublicate in prefix_sum
    }
    }
       
