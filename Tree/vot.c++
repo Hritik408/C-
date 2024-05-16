@@ -46,7 +46,7 @@ void vot(node *root)
 
     while (q.size() > 0)
     {
-        std::pair<node *, int> temp = q.front();
+        std::pair<node *, int> temp = q.front();   // queue
         q.pop();
 
 

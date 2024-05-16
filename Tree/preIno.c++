@@ -32,7 +32,7 @@ node* construct(int pre[], int ps, int pe, int in[], int ins, int ine){
         }
     }
 
-    int x = ind - ins;
+    int x = ind - ins;  // size of left of inOrder
 
     root->left = construct(pre, ps+1, ps+x, in, ins, ind-1);
     root->right = construct(pre, ps+x+1, pe, in, ind+1, ine);
@@ -61,11 +61,11 @@ int main(){
     int pre[] = {20, 27, 19, 10, 1, 11, 18, 15, 12, 29, 7, 35, 5, 13, 24, 33, 30};
     int in[] = {19, 27, 11, 1, 10, 20, 12, 29, 15, 35, 7, 13, 5, 18, 33, 24, 30};
 
-    int n = 17;
+    int n = 17;  // no of nodes
 
-  node* ans =  construct(pre, 0, n-1, in, 0, n-1);
+    node* ans =  construct(pre, 0, n-1, in, 0, n-1);
 
-  postorder(ans);
+    postorder(ans);
 
     return 0;
 }

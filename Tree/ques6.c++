@@ -102,13 +102,3 @@ for (int value : {18, 15, 27, 12, 19, 10, 24, 30, 7, 1, 11, 29, 35, 5, 13, 33})
 
     return 0;
 }
-
-
-//  Node* root = newNode(20);
-//     root->left = newNode(8);
-//     root->right = newNode(22);
-//     root->left->left = newNode(4);
-//     root->left->right = newNode(12);
-//     root->left->right->left = newNode(10);
-//     root->left->right->right = newNode(14);
-//     Node* target = root->left->right;

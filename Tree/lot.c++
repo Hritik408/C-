@@ -48,7 +48,7 @@ node *insert(node *root, int value)
 
         if (temp == nullptr)
         {
-            if (!q.empty())   q.push(nullptr);
+            if (!q.empty())    q.push(nullptr);
            std::cout << std::endl;  // come to next line
             continue;
         }

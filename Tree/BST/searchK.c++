@@ -51,7 +51,7 @@ bool search(node* root, int key){
 }
 
 
-int floar(node* root, int key){
+int floar(node* root, int key){   // greater element <= key
     int ans = INT_MIN;
     
     while(root != nullptr){

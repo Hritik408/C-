@@ -4,10 +4,8 @@
 
 using namespace std;
 
+void bfs(vector<vector<int>>& graph, int source, vector<bool>& vis) {
 
-void bfs(vector<vector<int>>& graph, int source) {
-    int n = graph.size();
-    vector<bool> vis(n, false);
     queue<int> q;
 
     q.push(source);
@@ -15,7 +13,6 @@ void bfs(vector<vector<int>>& graph, int source) {
 
     while (!q.empty()) {
         int u = q.front();
-        cout << u << " ";
         q.pop();
 
         // Using a range-based for loop for iterating through adjacent vertices
@@ -28,18 +25,33 @@ void bfs(vector<vector<int>>& graph, int source) {
 
           for (int i = 0; i < graph[u].size(); i++) {
             int v = graph[u][i];
-            if (!vis[v]) {
+            if (!vis[v]) {  // The square brackets [] are used with vectors in C++ to access elements by their index. Since vis is a vector, vis[i] refers to the boolean value at index i.
                 vis[v] = true;
                 q.push(v);
             }
         }
     }
-    cout << endl;
+}
+
+
+   int connected_comp(vector<vector<int>> graph){
+    int n = graph.size();  // represents no of nodes/vertices
+    vector<bool> vis(n, false);
+    int num_comp = 0;
+
+    for(int i = 0; i < graph.size(); i++){
+        if(!vis[i]){
+          bfs(graph, i, vis);  // here i as a source node
+        //   ++num_comp;
+        num_comp++;
+        }
+    }
+
+    return num_comp;
 }
 
 int main() {
-    int n = 6; // Number of vertices
-    int s = 0; // Source vertex
+    int n = 9;
     vector<vector<int>> graph(n);
 
     // Adding edges to the graph (undirected)
@@ -53,9 +65,14 @@ int main() {
     graph[3].push_back(1);
     graph[4].push_back(1);
     graph[4].push_back(2);
+    graph[5].push_back(6);
+    graph[7].push_back(8);
 
-    cout << "BFS starting from vertex " << s << ": ";
-    bfs(graph, s);
+
+    int connected = connected_comp(graph);
+
+    cout<< "No of connected components are : " <<  connected ;
 
     return 0;
 }
+
