@@ -4,8 +4,8 @@
 
 using namespace std;
 
-
-void bfs(vector<vector<int>>& graph, int source) {
+void bfs(vector<vector<int>> &graph, int source)
+{
     int n = graph.size();
     vector<bool> vis(n, false);
     queue<int> q;
@@ -13,7 +13,8 @@ void bfs(vector<vector<int>>& graph, int source) {
     q.push(source);
     vis[source] = true;
 
-    while (!q.empty()) {
+    while (!q.empty())
+    {
         int u = q.front();
         cout << u << " ";
         q.pop();
@@ -26,9 +27,11 @@ void bfs(vector<vector<int>>& graph, int source) {
         //     }
         // }
 
-          for (int i = 0; i < graph[u].size(); i++) {
+        for (int i = 0; i < graph[u].size(); i++)
+        {
             int v = graph[u][i];
-            if (!vis[v]) {
+            if (!vis[v])
+            {
                 vis[v] = true;
                 q.push(v);
             }
@@ -37,7 +40,8 @@ void bfs(vector<vector<int>>& graph, int source) {
     cout << endl;
 }
 
-int main() {
+int main()
+{
     int n = 6; // Number of vertices
     int s = 0; // Source vertex
     vector<vector<int>> graph(n);
