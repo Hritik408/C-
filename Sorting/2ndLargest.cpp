@@ -14,7 +14,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         int count = 0;
-        for (int j = 0; j < n - 1 - i; j++) // in each iteration last element will fixed
+        for (int j = 0; j < n - 1 - i; j++) 
         {
             if (arr[j] > arr[j + 1])
             {
@@ -26,10 +26,8 @@ int main()
             break;
     }
 
-    for (int i = 0; i < n; i++)
-    {
-        std::cout << arr[i] << " ";
-    }
+        std::cout << arr[n-3] << " ";  // here u can get element as u want
+    
 
     return 0;
 }

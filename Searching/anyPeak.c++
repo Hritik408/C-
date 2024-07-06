@@ -5,9 +5,9 @@
 int bs(int arr[], int n)
 {
 
-     if (n == 1)   return arr[0];
-     if(arr[0] > arr[1]) return arr[0];
-     if(arr[n-1] > arr[n-2]) return arr[n-1];
+    //  if (n == 1)   return arr[0];
+    //  if(arr[0] > arr[1]) return arr[0];
+    //  if(arr[n-1] > arr[n-2]) return arr[n-1];
      
     int start = 1, end = n - 2;
 
@@ -33,7 +33,7 @@ int bs(int arr[], int n)
 
 int main()
 {
-    int arr[] = {3, 2, 24, 25, 7, 4, 8};
+    int arr[] = {3, 32, 8, 25, 7, 4, 8};
     int n = sizeof(arr) / sizeof(arr[0]);
     int ans = bs(arr, n);
     std::cout << ans;

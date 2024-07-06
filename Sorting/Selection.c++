@@ -19,7 +19,7 @@ int main()
         int min_value = INT_MAX;
         int min_idx = -1;
         
-        for (int j = i; j < n; j++)
+        for (int j = i; j < n; j++) // find minimum element after complete of for loop
         {
             if (arr[j] < min_value)
             {

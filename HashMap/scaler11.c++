@@ -3,7 +3,7 @@
 // find longest sequence that can be rearranged in a strictly increasing order by 1.
 
 int main(){
-    int arr[] = {6,7,10,8,14,9,12,13,15,5};
+    int arr[] = {6,7,10,11,12};
     int n = sizeof(arr)/sizeof(arr[0]);
    
    std::unordered_set<int> s;
@@ -15,7 +15,7 @@ int main(){
    int ans = 0;
    for(auto it = s.begin(); it != s.end(); ++it){
       int x = * it;
-      if(s.find(x-1) == s.end()){  // if x-1 is not present in set
+      if(s.find(x-1) == s.end()){  // if x-1 is not present in set, then x is the starting point 
          int temp = x + 1;
          int count = 1;
          while(s.find(temp) != s.end()){ // continues as long as the consecutive element temp is found in the set s.
@@ -23,7 +23,6 @@ int main(){
             temp++;
          }
          ans = std::max(ans, count);
-
       }
    }
 

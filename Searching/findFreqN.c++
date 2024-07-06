@@ -33,7 +33,7 @@ int last_occ(int arr[], int k, int n)
         if (arr[mid] == k)
         {
             last = mid;
-            start = mid + 1;
+            start = mid + 1;  // ignore left part
         }
         else if (arr[mid] < k)
             start = mid + 1;

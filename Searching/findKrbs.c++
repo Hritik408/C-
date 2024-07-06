@@ -4,7 +4,7 @@
 int findUnique(int arr[], int n)
 {
     int start = 0, end = n - 1;
-    int k = n;
+    int k = -1;  // k can be anything
     while (start <= end)
     {
         int mid = (start + end) / 2;
@@ -14,7 +14,7 @@ int findUnique(int arr[], int n)
         if (arr[mid] < arr[0])
         {
             k = mid;
-            end = mid - 1;
+            end = mid-1;
         }
     }
 

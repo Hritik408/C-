@@ -16,7 +16,7 @@ int main(){
     for (int i = 0; i < n; i++)
     {
         prefix_sum += arr[i];
-        if (x.find(prefix_sum) != x.end()) // if there is dublicate present
+        if (x.find(prefix_sum) != x.end()) // if there is dublicate prefix sum is present
         {
             count += x[prefix_sum].size(); // If duplicate present, update count by the size of the vector
         }
