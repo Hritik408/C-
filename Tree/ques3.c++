@@ -58,7 +58,7 @@ int main()
 for (int value : {18, 15, 27, 12, 19, 10, 24, 30, 7, 1, 11, 29, 35, 5, 13, 33})
     insert(root, value);
 
-    int m = 5;
+    int m = 5;  // here m and n are target node
     int n = 30;
 
     std::vector<int> P;
