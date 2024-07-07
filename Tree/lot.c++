@@ -3,6 +3,7 @@
 #include <queue>
 #include <vector>
 // level order traversals from left to right
+// in this question nullptr is used because we want to come to the new line
 
 struct node
 {
@@ -46,11 +47,11 @@ node *insert(node *root, int value)
         node *temp = q.front();
         q.pop();
 
-        if (temp == nullptr)
+        if (temp == nullptr)  // temp nullptr aane se phle all the previous left and right elements of root placed in the queue
         {
             if (!q.empty())    q.push(nullptr);
            std::cout << std::endl;  // come to next line
-            continue;
+            continue;  // that means goes to the while loop
         }
 
      std::cout << temp->data << " ";
@@ -60,7 +61,7 @@ node *insert(node *root, int value)
             q.push(temp->left);
         if (temp->right != nullptr)
             q.push(temp->right);
-        // for right to left, reverse the above if condition
+        // for right to left, reverse the above if conditions
     }
  }
 
