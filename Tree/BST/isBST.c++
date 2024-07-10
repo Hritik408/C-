@@ -1,6 +1,7 @@
 #include <iostream>
 #include <climits>
 #include <algorithm>
+// it is range method from which we check it is bst or not
 
 struct node{
     int data;

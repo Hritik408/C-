@@ -56,7 +56,7 @@ node *insert(node *root, int value)
             continue;
         }
       
-      if(!first_node){
+      if(!first_node){   // if statement will run if first_node will false
      std::cout << temp->data << " ";
         first_node = true;
       }

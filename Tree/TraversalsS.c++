@@ -88,7 +88,26 @@ node *insert(node *root, int value)
              //   curr = curr->right;
             }
         }
-  
+ }
+
+ void postOrder(node *root){
+    if(root == nullptr) return ;
+    
+    std::stack<node*> st;
+    st.push(root);
+   
+       std::cout << "\npostOrder traversals: " ;
+       node* curr = root;
+
+    while(!st.empty()){
+
+        if(curr->left != nullptr)  st.push(curr->left);
+        if(curr->right != nullptr)  st.push(curr->right);
+
+        node* temp = st.top();
+        std::cout<< temp->data << " ";
+        st.pop();
+    }
  }
 
 int main()
@@ -102,6 +121,8 @@ int main()
     preOrder(root);
     std::cout<< std::endl;
     preOrder2(root);
+
+    // postOrder(root); // try with using two stacks
 
     return 0;
 }

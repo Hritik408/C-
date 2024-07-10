@@ -37,7 +37,7 @@ void vot(node *root)
         return;
 
     std::unordered_map<int, std::vector<node *>> hm;
-    std::queue<std::pair<node *, int>> q;
+    std::queue<std::pair<node *, int>> q; // here int is level 
 
     int max_level = -1;
     int min_level = 1;
@@ -50,18 +50,18 @@ void vot(node *root)
         q.pop();
 
 
-        node *current = temp.first;
-        int level = temp.second;
+        node *current = temp.first;  // root
+        int level = temp.second;     // level which is equal to 0
 
-        max_level = std::max(level, max_level);
-        min_level = std::min(level, min_level);
+        max_level = std::max(level, max_level); 
+        min_level = std::min(level, min_level);  // here max_level and min_level is only used for identify the max level and min level
 
         hm[level].push_back(current);
 
         if (current->left != nullptr)
-            q.push({current->left, level - 1});
+            q.push({current->left, level - 1});  // when we goes left side then level decreases
         if (current->right != nullptr)
-            q.push({current->right, level + 1});
+            q.push({current->right, level + 1});  // when we goes right side then level increases
     }
 
     std::cout << "Vertical level order traversals" << std::endl;
