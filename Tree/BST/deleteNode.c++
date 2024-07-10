@@ -49,7 +49,8 @@ node* deleteNode(node* root, int key) {
      else if (key > root->data) {
         root->right = deleteNode(root->right, key);
     } 
-    else {
+
+    else {  // here i find the target node
         if (root->left == nullptr && root->right == nullptr) {
            delete root;
             return nullptr;
@@ -66,7 +67,7 @@ node* deleteNode(node* root, int key) {
         } 
         else {
             node* temp = pred(root);   
-            root->data = temp->data;
+            root->data = temp->data;  // here we replace the current node with its precedessor
             root->left = deleteNode(root->left, temp->data);
         }
     }
