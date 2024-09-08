@@ -8,12 +8,14 @@ using namespace std;
 
     for(int i = 0; i < n; i++){
         if(arr[0][i] == 0)  dp[0][i] = 0;
-        else  dp[0][i] = 1;
+        else if (i==0) dp[0][i] = 1; //starting point
+        else  dp[0][i] = dp[0][i-1];
     }
 
     for(int j = 0; j < n; j++){
         if(arr[j][0] == 0)  dp[j][0] = 0;
-        else  dp[j][0] = 1;
+        else if (j==0) dp[j][0] = 1;  // starting point is always one
+        else  dp[j][0] = dp[j-1][0];
     }
 
 
